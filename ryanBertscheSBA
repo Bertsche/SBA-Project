@@ -1,0 +1,77 @@
+package ryanBertscheSBA;
+
+import java.awt.BorderLayout;
+
+public class ryanBertscheSBAframe extends JFrame {
+
+	private JPanel contentPane;
+	private final JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
+	private final JScrollPane scrollPane = new JScrollPane();
+	private final JPanel panel = new JPanel();
+	private final JScrollPane scrollPane_1 = new JScrollPane();
+	private final JPanel panel_1 = new JPanel();
+	private final JScrollPane scrollPane_2 = new JScrollPane();
+	private final JPanel panel_2 = new JPanel();
+	private final JProgressBar progressBar = new JProgressBar();
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+					ryanBertscheSBAframe frame = new ryanBertscheSBAframe();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public ryanBertscheSBAframe() {
+		jbInit();
+	}
+	private void jbInit() {
+		setTitle("Ryan Bertsche Project");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 685, 578);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		tabbedPane.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
+		tabbedPane.setBounds(10, 11, 664, 529);
+		
+		contentPane.add(tabbedPane);
+		
+		tabbedPane.addTab("New tab", null, scrollPane_2, null);
+		panel_2.setPreferredSize(new Dimension(625, 900));
+		
+		scrollPane_2.setViewportView(panel_2);
+		panel_2.setLayout(null);
+		
+		tabbedPane.addTab("New tab", null, scrollPane, null);
+		panel.setPreferredSize(new Dimension(625, 900));
+		
+		scrollPane.setViewportView(panel);
+		
+		panel.setLayout(null);
+		
+		tabbedPane.addTab("New tab", null, scrollPane_1, null);
+		panel_1.setPreferredSize(new Dimension(625, 900));
+		
+		scrollPane_1.setViewportView(panel_1);
+		panel_1.setLayout(null);
+		progressBar.setStringPainted(true);
+		progressBar.setBounds(529, 11, 146, 14);
+		
+		
+		contentPane.add(progressBar);
+	}
+}
